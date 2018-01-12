@@ -17,7 +17,7 @@
     "node-pagerduty": "^1.0.1",
     "node-zendesk": "^1.2.0",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-es2016": "^6.24.1"
