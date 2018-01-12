@@ -16,20 +16,26 @@ This is likely going to be run on premise. To make that process as painless as p
 
 ## Development
 
-First, copy the example env file from conf/env.example to conf/env. Edit conf/env with the tokens and other values specified.
+1. `cp ./conf/env.example ./conf/env`
+2. Populate `conf/env` with keys and configuration options
+3. `make install`
+4. `make start`
+
+### Makefile
 
 A Makefile exists that should let you accomplish just about anything you need to do.
 
 You can start the application by running:
 
-`make`
+`make start`
 
 Additionally, the following make commands are available:
 
-`install` - Install NPM dependencies
-`start` - Starts the application only
-`getusers` - Runs the get user ID script (see scripts)
-`env` - Exports conf/env file (for envvars)
+* `install` - Install NPM dependencies, configure environment and make map
+* `start` - Starts the application only
+* `getusers` - Runs the get user ID script (see scripts)
+* `map` - Creates email to ID map file 
+* `env` - Exports conf/env file (for envvars)
 
 ## Deploying
 
@@ -52,9 +58,3 @@ A number of environment variables are required for this application:
 ## Configuration Options
 
 In addition to the environment variables you can also tweak the polling time for on calls / ticket reassignment in `config.js`
-
-## Scripts
-
-Helper scripts exist to obtain user ID's necessary to add the mapper configuration for PagerDuty users to Zendek users.
-
-Run this script using `make getusers` for a list of all agents and their ID's in Zendesk. 
