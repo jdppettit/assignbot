@@ -9,6 +9,7 @@
   "author": "Joe Pettit",
   "license": "ISC",
   "dependencies": {
+    "arc-log": "^1.0.12",
     "bluebird": "^3.5.1",
     "envvar": "^2.0.0",
     "moment": "^2.20.1",
