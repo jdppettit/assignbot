@@ -58,4 +58,7 @@ A number of environment variables are required for this application:
 
 ## Configuration Options
 
-In addition to the environment variables you can also tweak the polling time for on calls / ticket reassignment in `config.js`
+In addition to the environment variables there are several configuration options present in [config.js](https://github.com/silverp1/assign-bot/blob/master/config.js)
+
+* `POLL_INTERVAL` - How often should the loop run (this includes checking on call, getting tickets, and assigning tickets to on call). Recommended default is `300s` (5 minutes). Be warned, Zendesk does rate limit so take that into consideration when changing this value.
+* `STARTING_TICKET_ID` - All tickets *after* this ticket ID will be reassigned the first time the application runs. Consider making this the ID of a fairly recent ticket to avoid reassigning your old tickets in mass. Zendesk uses an autoincremented integer for the ticket ID, so if you only want _new_ tickets to be reassigned, make this value (CURRENT_MAX_TICKET_ID + 1). 
