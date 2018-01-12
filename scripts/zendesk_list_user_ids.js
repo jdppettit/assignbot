@@ -1,5 +1,6 @@
 'use strict';
 
+const A = require('arc-log');
 const P = require('bluebird');
 const zendesk = require('node-zendesk');
 
@@ -11,9 +12,15 @@ const zdClient = zendesk.createClient({
   remoteUri: config.ZENDESK_URI
 });
 
-zdClient.users.listByGroup((err, req, result) => {
+const log = A.log;
+
+zdClient.users.list((err, req, result) => {
   if (err) {
-    console.log(err);
+    log('Got an error pulling users', 'error');
+    log(err, 'error');
+    return;
   }
-  console.log(result);
+  log('Users retrieved successfully', 'info');
+  log(result, 'info');
+  log(req, 'info');
 });

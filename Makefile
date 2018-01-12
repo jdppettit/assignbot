@@ -1,7 +1,8 @@
-.PHONY: install env start
+.PHONY: env start
 
 install:
 	npm install
+	./node_modules/.bin/babel-node scripts/zendesk_create_map.js
 
 start:
 	./node_modules/.bin/babel-node index.js
@@ -9,5 +10,11 @@ start:
 getusers:
 	./node_modules/.bin/babel-node scripts/zendesk_list_user_ids.js
 
+map:
+	./node_modules/.bin/babel-node scripts/zendesk_create_map.js
+
 env:
-	source conf/env
+	source ./conf/env
+
+clean:
+	rm -rf ./node_modules
