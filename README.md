@@ -36,6 +36,7 @@ Additionally, the following make commands are available:
 * `getusers` - Runs the get user ID script (see scripts)
 * `map` - Creates email to ID map file 
 * `env` - Exports conf/env file (for envvars)
+* `clean` - Remove node_modules
 
 ## Deploying
 
