@@ -2,6 +2,7 @@
 
 install:
 	npm install
+	source ./conf/env
 	./node_modules/.bin/babel-node scripts/zendesk_create_map.js
 
 start:
